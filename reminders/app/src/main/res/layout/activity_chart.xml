@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RadioGroup
+    android:id="@+id/rg_chart"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@drawable/bottom_shape"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="5dp"
+    android:orientation="horizontal">
+    <RadioButton
+        android:id="@+id/today_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/Custom.TabRadioButton"
+        android:checked="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="今日计划"
+        />
+    <RadioButton
+        android:id="@+id/history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        style="@style/Custom.TabRadioButton"
+        android:checked="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="历史计划"
+        />
+
+
+</RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/today_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rg_chart"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ds"
+           >
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+        </RelativeLayout>
+<RelativeLayout
+    android:id="@+id/ds"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:background="@color/q"
+    android:layout_alignParentBottom ="true"
+
+    >
+
+<RelativeLayout
+    android:id="@+id/finish_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:id="@+id/finish"
+        android:text="今日您已完成计划"
+        android:textSize="24dp"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+    />
+        <TextView
+            android:id="@+id/num_finish"
+            android:text="多少个"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/finish"
+            />
+</RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/nofinish_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/finish_layout"
+
+            >
+        <TextView
+            android:id="@+id/nofinish"
+            android:text="今日您还有未完成计划"
+            android:textSize="24dp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+            <TextView
+                android:id="@+id/num_nofinish"
+                android:text="多少个"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nofinish"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nofinish_layout"
+            >
+            <TextView
+                android:id="@+id/percent"
+                android:text="今日您已完成计划"
+                android:textSize="24dp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/finish_percent"
+                android:text="百分比"
+                android:textSize="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/percent"
+                />
+
+        </RelativeLayout>
+</RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/history_plan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rg_chart"
+        android:visibility="invisible"
+        >
+
+        <com.example.reminders.plandatabase.FScrollListviewDelete
+            android:id="@+id/history_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+    </RelativeLayout>
+</RelativeLayout>

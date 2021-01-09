@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="?attr/lvBackground"
+    android:id="@+id/main_layout"
+    android:layout_margin="0dp"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#66000000"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:backgroundTint="?attr/addTagTheme"
+        app:srcCompat="?attr/addTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_alarm"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:backgroundTint="?attr/addPlanTagTheme"
+        app:srcCompat="?attr/addPlanTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/top_shape"
+            android:elevation="4dp"
+            app:titleTextColor="?attr/titleColor"
+            android:theme="?attr/toolbarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/t"
+                >
+
+            </CalendarView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            >
+            <com.example.reminders.database.ScrollListviewDelete
+                android:id="@+id/lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/my_toolbar"
+                android:divider="?attr/lvBackground"
+                android:dividerHeight="8dp"
+                >
+            </com.example.reminders.database.ScrollListviewDelete>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv_plan_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            >
+            <com.example.reminders.plandatabase.ScrollListviewDelete
+                android:id="@+id/lv_plan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/my_toolbar"
+                android:divider="?attr/lvBackground"
+                android:dividerHeight="8dp"
+
+
+                >
+
+            </com.example.reminders.plandatabase.ScrollListviewDelete>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text=" 开始你的记事之旅吧"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+
+        <RadioGroup
+            android:id="@+id/tabs_rg"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_shape"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/plan_tab"
+                style="@style/Custom.TabRadioButton"
+                android:checked="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableTop="@drawable/tab_contact_selector"
+                />
+
+            <RadioButton
+                android:id="@+id/note_tab"
+                style="@style/Custom.TabRadioButton"
+                android:checked="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableTop="@drawable/tab_record_selector"
+                />
+
+
+
+        </RadioGroup>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.reminders.plandatabase.FListItemDelete
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/note_shape"
+    android:outlineAmbientShadowColor="@color/black">
+
+    <!--数据框-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/ftv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Title"
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:textColor="?attr/tvMainColor"/>
+        <TextView
+            android:id="@+id/ftv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="?attr/tvMainColor"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ftv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:textSize="20dp"
+        android:textColor="?attr/tvSubColor"
+        android:singleLine="true"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/fbtnDelete_plan"
+            android:layout_width="65dp"
+            android:layout_height="58dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/btndelete_shape"
+            android:src="?attr/delete"
+            android:focusable="false"/>
+    </LinearLayout>
+
+
+</com.example.reminders.plandatabase.FListItemDelete>
